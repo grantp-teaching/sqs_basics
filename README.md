@@ -1,6 +1,6 @@
 ## Notes
 
-[SQS notes (PDF)](sqs_notes.pdf)
+[SQS basics notes (PDF)](sqs_basics_notes.pdf)
 
 ## Resources
 
