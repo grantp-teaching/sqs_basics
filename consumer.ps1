@@ -1,7 +1,9 @@
 ﻿# demo SQS consumer script
 # Peadar Grant
 
-$QUrl='https://queue.amazonaws.com/381303118602/testq'
+param (
+	[Parameter(Mandatory)] $QUrl
+	)
 
 $max_wait = 1
 
