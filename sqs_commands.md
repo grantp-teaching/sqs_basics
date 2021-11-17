@@ -8,7 +8,7 @@ Creating a queue
 
 Create a queue (and copy the Queue URL):
 
-    $QUrl = (aws sqs create-queue --queue-name $QName).QueueUrl
+    $QUrl = (aws sqs create-queue --queue-name $QName | ConvertFrom-Json).QueueUrl
 
 # Message handling
 
