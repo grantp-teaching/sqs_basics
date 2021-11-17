@@ -17,7 +17,7 @@ Send message to queue
 	
 Receive message from queue
 	$m = (aws sqs receive-message --queue-url $QUrl | ConvertFrom-Json).Messages[0]
-	$m.MessageBody 
+	$m.Body 
 
 Delete message
 	aws sqs delete-message --queue-url $QUrl --receipt-handle $m.ReceiptHandle
