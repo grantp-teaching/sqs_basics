@@ -15,9 +15,16 @@ queue_url=sys.argv[1]
 # client object for SQS
 sqs = boto3.client('sqs')
 
+wait_time_seconds = 1
+
 while True:
     # receive
-    response = sqs.receive_message(QueueUrl=queue_url, WaitTimeSeconds=20, MaxNumberOfMessages=1)
+    response = sqs.receive_message(QueueUrl=queue_url, WaitTimeSeconds=wait_time_seconds, MaxNumberOfMessages=1)
+    wait_time_seconds = 20
+
+    if 'Messages' not in response:
+        print('no messages')
+        continue
 
     # loop over all messages
     for message in response['Messages']:
